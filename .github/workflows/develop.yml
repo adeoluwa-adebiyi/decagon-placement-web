@@ -13,7 +13,7 @@ jobs:
     steps:
 
       - name: Checkout
-        uses: action/checkout@v2
+        uses: actions/checkout@v2
 
       - name: Install NodeJS
         run: sudo apt install -y nodejs npm
