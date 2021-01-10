@@ -1,10 +1,10 @@
 import React from "react";
 import { Box } from "@chakra-ui/react";
 
-const SplashScreen = ()=>{
+const SplashScreen = ():JSX.Element=>{
     return (
-        <Box>
-            
+        <Box height="100%">
+            <h1>HomePage</h1>
         </Box>
     )
 }

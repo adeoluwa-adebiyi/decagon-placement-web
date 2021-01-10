@@ -1,7 +1,7 @@
 import React from 'react';
 import SplashScreen from './components/splash-screen';
 
-function App() {
+const  App = (): JSX.Element => {
   return (
     <div className="App">
       <SplashScreen/>
