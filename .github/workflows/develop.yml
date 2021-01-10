@@ -47,10 +47,21 @@ jobs:
           cd project
           npm run build
 
+      # - name: Deploy to Netlify
+      #   uses: jsmrcaga/action-netlify-deploy@master
+      #   with:
+      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+      #     NETLIFY_DEPLOY_TO_PROD: true
+      #     build_directory: project/build
+
       - name: Deploy to Netlify
-        uses: jsmrcaga/action-netlify-deploy@master
+        uses: nwtgck/actions-netlify@v1.1
         with:
+          publish-dir: './project/build'
+          production-branch: develop
+          deploy-message: "Deploy from GitHub Actions"
+        env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
-          NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: project/build
+        timeout-minutes: 1
