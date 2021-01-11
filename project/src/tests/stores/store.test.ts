@@ -1,7 +1,7 @@
-import { UserInfo } from "../data/entities/user-info";
-import { SetUserListAction, SetUserListFetchedAction, UserReducerActionType } from "../store/actions/user-actions";
-import { UserReducerProps } from "../store/reducers/user-reducer";
-import store from "../store/store";
+import { UserInfo } from "../../data/entities/user-info";
+import { SetUserListAction, SetUserListFetchedAction, UserReducerActionType } from "../../store/actions/user-actions";
+import { UserReducerProps } from "../../store/reducers/user-reducer";
+import store from "../../store/store";
 
 describe("Tests Redux store functionality", ()=>{
 
