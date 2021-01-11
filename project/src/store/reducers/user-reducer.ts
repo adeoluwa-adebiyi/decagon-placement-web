@@ -1,4 +1,4 @@
-import { UserInfo } from "../../domain/models/user-info";
+import { UserInfo } from "../../data/entities/user-info";
 import { 
     UserReducerAction, 
     UserReducerActionType, 

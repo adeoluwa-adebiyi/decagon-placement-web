@@ -1,4 +1,4 @@
-import { UserInfo } from "../../domain/models/user-info";
+import { UserInfo } from "../../data/entities/user-info";
 import { Action } from "./action-interface";
 
 // UserReducerAction event type definitions
