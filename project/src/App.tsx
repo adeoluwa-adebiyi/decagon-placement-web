@@ -1,11 +1,12 @@
+import { Box } from '@chakra-ui/react';
 import React from 'react';
 import SplashScreen from './components/splash-screen';
 
 const  App = (): JSX.Element => {
   return (
-    <div className="App">
+    <Box height="100%">
       <SplashScreen/>
-    </div>
+    </Box>
   );
 }
 
