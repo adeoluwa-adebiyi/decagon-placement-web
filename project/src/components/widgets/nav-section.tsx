@@ -1,6 +1,6 @@
 import { Box, BoxProps } from "@chakra-ui/react";
 
-export interface NavSectionProps extends BoxProps{
+export interface NavSectionProps{
     selectedGender: undefined | "male" | "female";
     setGender: Function;
 }
