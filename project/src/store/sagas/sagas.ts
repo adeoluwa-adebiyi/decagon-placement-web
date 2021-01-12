@@ -3,14 +3,15 @@ import { FetchUserListAction, UserReducerActionType, setUserInfoList, setUserInf
 import { RemoteUserInfoRepo } from "../../data/repos/user-info-repo";
 import { UserInfoModel } from "../../domain/models/user-info";
 import { AppStoreState } from "../store";
+import { UserInfoFetchApiParams } from "../../data/apis/user-info-api";
 
 
 // Interceptor to handle FETCH_USER_LIST EVENT
 function* fetchUserList(action: FetchUserListAction){
     try{
-    const {page} = action.payload;
-    const fetchInfo = (data:FetchUserListPayloadType) => RemoteUserInfoRepo.getInstance().fetch(data);
-    const response: UserInfoModel[] = yield call(fetchInfo,{page});
+    const {page, gender} = action.payload;
+    const fetchInfo = (data:UserInfoFetchApiParams) => RemoteUserInfoRepo.getInstance().fetch(data);
+    const response: UserInfoModel[] = yield call(fetchInfo,{page, gender});
     yield put(setUserInfoList(response));
     yield put(setUserInfoListFetched(page,true));
     }catch(e){
