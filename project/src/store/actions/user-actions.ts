@@ -1,4 +1,4 @@
-import { UserInfo } from "../../data/entities/user-info";
+import { UserInfoModel } from "../../domain/models/user-info";
 import { Action } from "./action-interface";
 
 // UserReducerAction event type definitions
@@ -14,7 +14,8 @@ export type UserReducerAction<PayloadType> = Action<UserReducerActionType, Paylo
 
 //Definition of FetchUserList event payload
 export interface FetchUserListPayloadType{
-    page: number
+    page: number;
+    gender?: "male" | "female" | undefined;
 }
 
 //Definition of SetUserListFetched event payload
@@ -25,7 +26,7 @@ export interface SetUserListFetchedActionPayloadType{
 
 //Definition of SetUserList event payload
 export interface SetUserListActionPayloadType{
-    userList: Array<UserInfo>;
+    userList: Array<UserInfoModel>;
 }
 
 
@@ -46,4 +47,35 @@ export interface SetUserListFetchedAction extends UserReducerAction<SetUserListF
 export interface SetUserListAction extends UserReducerAction<SetUserListActionPayloadType>{
     type: UserReducerActionType.SET_USER_LIST;
     payload: SetUserListActionPayloadType;
+}
+
+
+export const fetchUserInfoList = (params: FetchUserListPayloadType): FetchUserListAction =>{
+    const {page=1, gender=null} = params;
+    return <FetchUserListAction>{
+        type:UserReducerActionType.FETCH_USER_LIST,
+        payload:{
+            page,
+            gender: gender==null?undefined:gender
+        }
+    }
+}
+
+export const setUserInfoList = (userInfoList: UserInfoModel[]) => {
+    return <SetUserListAction>{
+        type: UserReducerActionType.SET_USER_LIST,
+        payload:{
+            userList: userInfoList
+        }
+    }
+}
+
+export const setUserInfoListFetched = (page:number, fetched:boolean) =>{
+    return <SetUserListFetchedAction>{
+        type: UserReducerActionType.SET_USER_LIST_FETCHED,
+        payload:{
+            page,
+            userListFetched: fetched
+        }
+    }
 }

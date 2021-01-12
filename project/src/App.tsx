@@ -1,11 +1,14 @@
 import { Box } from '@chakra-ui/react';
 import React from 'react';
-import SplashScreen from './components/splash-screen';
+import SplashScreen from './components/pages/splash-screen';
+import {BrowserRouter} from "react-router-dom"
 
 const  App = (): JSX.Element => {
   return (
     <Box height="100%">
-      <SplashScreen/>
+      <BrowserRouter>
+        <SplashScreen/>
+      </BrowserRouter>
     </Box>
   );
 }

@@ -1,4 +1,4 @@
-import { UserInfo } from "../../data/entities/user-info";
+import { UserInfoModel } from "../../domain/models/user-info";
 import { 
     UserReducerAction, 
     UserReducerActionType, 
@@ -8,7 +8,7 @@ from "../actions/user-actions";
 
 
 export interface UserReducerProps{
-    userList: UserInfo[];
+    userList: UserInfoModel[];
     userListFetched: boolean;
     page: number;
 }

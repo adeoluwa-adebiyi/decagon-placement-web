@@ -1,4 +1,6 @@
+import { transformParser } from "@chakra-ui/react";
 import { UserInfo } from "../../data/entities/user-info";
+import { UserInfoDataTransformer } from "../../data/transformers/user-info-data.transformer";
 import { SetUserListAction, SetUserListFetchedAction, UserReducerActionType } from "../../store/actions/user-actions";
 import { UserReducerProps } from "../../store/reducers/user-reducer";
 import store from "../../store/store";
@@ -58,15 +60,16 @@ describe("Tests Redux store functionality", ()=>{
             },
             "nat": "IE"
           }];
+        const transformer = new UserInfoDataTransformer();
         store.dispatch(
             <SetUserListAction>{
                 type: UserReducerActionType.SET_USER_LIST,
                 payload:{
-                    userList:[...list]
+                    userList:[...list].map(info => transformer.transform(info))
                 }
             }
         );
-        expect((store.getState().users as UserReducerProps ).userList).toEqual(list);
+        expect((store.getState().users as UserReducerProps ).userList).toEqual(list.map(info => transformer.transform(info)));
     });
 
     it("Should correctly set userListFetched value",()=>{
