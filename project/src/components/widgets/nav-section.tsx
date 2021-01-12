@@ -1,16 +1,17 @@
-import { Box, BoxProps } from "@chakra-ui/react";
+import { Box, BoxProps, VStack } from "@chakra-ui/react";
+import { USER_SEARCH_PLACEHOLDER } from "../../config/nav-section";
+import GreetingPrompt from "../widgets/greeting-prompt";
+import UserModeSelectBar from "./user-mode-selection-bar";
+import UserSearchBar from "./user-searchbar";
 
-export interface NavSectionProps{
-    selectedGender: undefined | "male" | "female";
-    setGender: Function;
-}
 
-const NavSection = (props: NavSectionProps) =>{
-    const { selectedGender, setGender } = props;
+const NavSection = () =>{
     return (
-        <Box height="100%">
-
-        </Box>
+        <VStack alignItems="start" spacing={10}>
+            <GreetingPrompt username="Emerald"/>
+            <UserSearchBar placeholder={USER_SEARCH_PLACEHOLDER}/>
+            <UserModeSelectBar/>
+        </VStack>
     );
 }
 

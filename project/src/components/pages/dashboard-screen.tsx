@@ -1,11 +1,12 @@
 import { Box, Stack } from "@chakra-ui/react"
+import NavSection from "../widgets/nav-section"
 
 const DashboardScreen = (): JSX.Element=>{
     return (
-        <Box color="blueviolet.200" height="100%">
+        <Box backgroundColor="#262A41" height="100%">
             <Stack height="100%" direction="row">
-                <Stack flex={1} height="100%" direction="column" alignSelf="stretch" justifyContent="center" alignItems="center">
-                    <p>Nav Section</p>
+                <Stack id="nav-parent" bg="red" flex={1} height="100%" direction="column" alignSelf="stretch" justifyContent="center" alignItems="center">
+                    <NavSection/>
                 </Stack>
                 <Stack flex={1}  height="100%" direction="column" justifyContent="center" alignItems="center">
                     <p>Router Section</p>

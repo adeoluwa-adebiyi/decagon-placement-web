@@ -6,12 +6,14 @@ import {SetUserListFetchedAction, UserReducerActionType} from "../../store/actio
 import SplashScreen from "../../components/pages/splash-screen";
 import store from "../../store/store"
 import Loader from "../../components/widgets/loader";
+import NavSection from "../../components/widgets/nav-section";
 import MockAdapter from "axios-mock-adapter";
 import { BASE_URL } from "../../config/config";
 import HttpClient from "../../config/http-client";
 import { USER_INFO_FETCH_FIXTURE_DEFAULT, USER_INFO_FETCH_FIXTURE_MALE, USER_INFO_FETCH_FIXTURE_FEMALE } from "../../data/fixtures/user-info-fetch-fixture";
+import { RemoteUserInfoRepo } from "../../data/repos/user-info-repo";
 
-describe("Test functionality of SplashScreen component", ()=>{
+describe("Test functionality of DashboardScreen component", ()=>{
 
     beforeAll(()=>{
         const mock: MockAdapter = new MockAdapter(HttpClient);
@@ -23,36 +25,15 @@ describe("Test functionality of SplashScreen component", ()=>{
         mock.onGet(fetchFemaleUrl).reply(200, USER_INFO_FETCH_FIXTURE_FEMALE);
     });
 
-
-    it("Should render Loader on init", ()=>{
+    it("Should render NavSection component on init", ()=>{
         const wrapper = mount(
             <Provider store={store}>
                 <BrowserRouter>
-                    <SplashScreen/>
+                    <DashboardScreen/>
                 </BrowserRouter>
             </Provider>
-        )
-        expect(wrapper.find(Loader)).toHaveLength(1);
-        expect(wrapper.find(DashboardScreen)).toHaveLength(0);
-    });
-
-
-    it("Should render Dashboard on UserInfoList fetched", ()=>{
-        store.dispatch({
-            type: UserReducerActionType.SET_USER_LIST_FETCHED,
-            payload:{
-                userListFetched: true
-            }
-        })
-        const wrapper = mount(
-            <Provider store={store}>
-                <BrowserRouter>
-                    <SplashScreen/>
-                </BrowserRouter>
-            </Provider>
-        )
-        expect(wrapper.find(Loader)).toHaveLength(0);
-        expect(wrapper.find(DashboardScreen)).toHaveLength(1);
+        );
+        expect(wrapper.find(NavSection)).toHaveLength(1);
     });
 
 })

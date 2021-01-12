@@ -10,7 +10,7 @@ describe("Tests NavSection component for functionality", ()=>{
 
     it("Should render appropriate NavSection widgets", ()=>{
         const wrapper = shallow(
-            <NavSection selectedGender={undefined} setGender={(gender:string)=>{}}/>        
+            <NavSection/>        
             );
         expect(wrapper.find(GreetingPrompt)).toHaveLength(1);
         expect(wrapper.find(UserSearchBar)).toHaveLength(1);
