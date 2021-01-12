@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
 import App from "../App";
-import SplashScreen from "../components/splash-screen";
+import SplashScreen from "../components/pages/splash-screen";
 
 describe("Tests App for functionality", ()=>{
     it("Should render SplashScreen", ()=>{

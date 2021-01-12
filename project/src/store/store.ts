@@ -1,6 +1,6 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
-import { usersReducer } from "./reducers/user-reducer";
-import createSagaMiddleware, { runSaga } from "redux-saga";
+import { UserReducerProps, usersReducer } from "./reducers/user-reducer";
+import createSagaMiddleware from "redux-saga";
 import allSagas from "./sagas/sagas";
 
 
@@ -14,6 +14,10 @@ const combinedReducers = combineReducers({
 const store = createStore(combinedReducers, applyMiddleware(sagaMiddleWare));
 
 sagaMiddleWare.run(allSagas);
+
+export interface AppStoreState{
+    users: UserReducerProps
+}
 
 export default store;
 

@@ -5,7 +5,7 @@ import { Api } from "./contracts/api-interface";
 
 export interface UserInfoFetchApiParams{
     page: number;
-    gender: "male" | "female" | undefined;
+    gender?: "male" | "female" | undefined;
 }
 
 export type UserInfoFetchApiResponse = UserInfosResult
