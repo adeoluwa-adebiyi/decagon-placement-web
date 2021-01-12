@@ -61,7 +61,7 @@ export const fetchUserInfoList = (params: FetchUserListPayloadType): FetchUserLi
     }
 }
 
-export const setUserInfoList = (userInfoList: UserInfoModel[]) => {
+export const setUserInfoList = (userInfoList: UserInfoModel[]): SetUserListAction => {
     return <SetUserListAction>{
         type: UserReducerActionType.SET_USER_LIST,
         payload:{
@@ -70,7 +70,7 @@ export const setUserInfoList = (userInfoList: UserInfoModel[]) => {
     }
 }
 
-export const setUserInfoListFetched = (page:number, fetched:boolean) =>{
+export const setUserInfoListFetched = (page:number, fetched:boolean): SetUserListFetchedAction =>{
     return <SetUserListFetchedAction>{
         type: UserReducerActionType.SET_USER_LIST_FETCHED,
         payload:{

@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react"
 
-const DashboardScreen = ()=>{
+const DashboardScreen = (): JSX.Element=>{
     return (
         <Box>
 

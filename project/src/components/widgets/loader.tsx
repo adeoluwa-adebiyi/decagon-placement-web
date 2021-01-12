@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Spinner, Stack } from "@chakra-ui/react";
 
-const Loader = () => {
+const Loader = (): JSX.Element => {
     return (<Box height="100%">
         <Stack height="100%" alignSelf="stretch" justifyContent="center" alignItems="center" direction="column">
             <Spinner size="xl"/>

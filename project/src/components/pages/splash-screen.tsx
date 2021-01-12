@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Box, Spinner, Stack } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppStoreState } from "../../store/store";
 import { fetchUserInfoList } from "../../store/actions/user-actions";
@@ -14,8 +13,6 @@ const SplashScreen = ():JSX.Element=>{
     const dispatch = useDispatch();
 
     const [dashboardVisible, setDashboardVisible] = useState(false);
-
-    const history = useHistory();
 
     useEffect(()=>{
         dispatch(fetchUserInfoList({page:1}));

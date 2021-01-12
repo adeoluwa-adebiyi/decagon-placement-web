@@ -1,7 +1,6 @@
 import { takeLatest, call, put, select } from "@redux-saga/core/effects";
-import { FetchUserListAction, UserReducerActionType, setUserInfoList, setUserInfoListFetched } from "../actions/user-actions";
+import { FetchUserListAction, UserReducerActionType, setUserInfoList, setUserInfoListFetched, FetchUserListPayloadType } from "../actions/user-actions";
 import { RemoteUserInfoRepo } from "../../data/repos/user-info-repo";
-import { UserInfoFetchApiResponse } from "../../data/apis/user-info-api";
 import { UserInfoModel } from "../../domain/models/user-info";
 import { AppStoreState } from "../store";
 
@@ -10,7 +9,7 @@ import { AppStoreState } from "../store";
 function* fetchUserList(action: FetchUserListAction){
     try{
     const {page} = action.payload;
-    const fetchInfo = (data:any) => RemoteUserInfoRepo.getInstance().fetch(data);
+    const fetchInfo = (data:FetchUserListPayloadType) => RemoteUserInfoRepo.getInstance().fetch(data);
     const response: UserInfoModel[] = yield call(fetchInfo,{page});
     yield put(setUserInfoList(response));
     yield put(setUserInfoListFetched(page,true));
@@ -22,6 +21,6 @@ function* fetchUserList(action: FetchUserListAction){
 
 
 // Bundle middleware functions to intercept redux events
-export default function* allSagas(){
+export default function* allSagas(): Generator{
     yield takeLatest(UserReducerActionType.FETCH_USER_LIST, fetchUserList);
 }
