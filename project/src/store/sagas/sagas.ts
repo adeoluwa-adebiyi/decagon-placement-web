@@ -1,5 +1,5 @@
 import { takeLatest, call, put, select } from "@redux-saga/core/effects";
-import { FetchUserListAction, UserReducerActionType, setUserInfoList, setUserInfoListFetched, FetchUserListPayloadType } from "../actions/user-actions";
+import { FetchUserListAction, UserReducerActionType, setUserInfoList, setUserInfoListFetched } from "../actions/user-actions";
 import { RemoteUserInfoRepo } from "../../data/repos/user-info-repo";
 import { UserInfoModel } from "../../domain/models/user-info";
 import { AppStoreState } from "../store";

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppStoreState } from "../../store/store";
 import { fetchUserInfoList } from "../../store/actions/user-actions";
-import { withRouter, useHistory  } from "react-router-dom";
+import { withRouter} from "react-router-dom";
 import DashboardScreen from "./dashboard-screen";
 import Loader from "../widgets/loader";
 
