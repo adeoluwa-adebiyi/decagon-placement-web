@@ -6,6 +6,7 @@ export interface NavSectionProps extends BoxProps{
 }
 
 const NavSection = (props: NavSectionProps) =>{
+    const { selectedGender, setGender } = props;
     return (
         <Box height="100%">
 
