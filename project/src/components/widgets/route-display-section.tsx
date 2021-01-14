@@ -1,5 +1,4 @@
 import { Box, Spacer, VStack } from "@chakra-ui/react";
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CountryKeyEntry } from "../../domain/models/country-key-entry";
 import { UserInfoModel } from "../../domain/models/user-info";
@@ -17,10 +16,6 @@ const RouteDisplaySection = (): JSX.Element => {
     const setCountry = (country:string)=>{
         dispatch(setCountryFilter(country));
     }
-    const countryList: CountryKeyEntry[] = [{
-        name: "GB",
-        key: "UK"
-    }];
     const currentCountry:string = useSelector((state:AppStoreState)=>state.users.selectedCountry);
     const userInfoList: UserInfoModel[] = useSelector((state:AppStoreState)=>state.users.userList);
     const countryKeyList: CountryKeyEntry[] = [{key:"", name:"Filter by Country"},...userInfoList.map((userInfo)=>{

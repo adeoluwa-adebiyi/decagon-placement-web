@@ -1,4 +1,4 @@
-import { VStack, Text, HStack, Select, Button, Icon } from "@chakra-ui/react";
+import { VStack, Text, HStack } from "@chakra-ui/react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { FILTER_LEADING_TEXT, FILTER_PLACEHOLDER_TEXT } from "../../config/nav-section";

@@ -2,7 +2,6 @@ import { Box, VStack } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterUsersByText } from "../../domain/filters/user-info-filter";
-import { CountryKeyEntry } from "../../domain/models/country-key-entry";
 import { UserInfoModel } from "../../domain/models/user-info";
 import { fetchUserInfoList } from "../../store/actions/user-actions";
 import { AppStoreState } from "../../store/store";
@@ -28,9 +27,6 @@ export const UserListScreen = (): JSX.Element=>{
     const users = useSelector((state:AppStoreState) => state.users);
 
     const dispatch = useDispatch();
-
-    const [dashboardVisible, setDashboardVisible] = useState(false);
-
 
     useEffect(()=>{
         if(!users.userListFetched)
