@@ -1,6 +1,6 @@
 # Decagon Dev-Placement-Web
 
-![Test Passing Status](https://github.com/adeoluwa-adebiyi/decagon-devplacement-web/workflows/develop/badge.svg)
+[![Actions Status](https://github.com/adeoluwa-adebiyi/decagon-placement-web/workflows/develop/badge.svg)](https://github.com/adeoluwa-adebiyi/decagon-placement-web/actions)
 
 
 ## Decsription
