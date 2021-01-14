@@ -1,6 +1,5 @@
-import { VStack, IconProps, Box, Text, HStack } from "@chakra-ui/react";
+import { VStack, Box, Text, HStack } from "@chakra-ui/react";
 import { Icon } from "@chakra-ui/icons";
-import { FaMale, FaUserAlt, FaFemale } from "react-icons/fa";
 import { IconType } from "react-icons";
 
 
@@ -12,7 +11,7 @@ export interface UserModeSelectButtonProps extends React.ComponentProps<"div"> {
 }
 
 
-const UserModeSelectButton = (props: UserModeSelectButtonProps) => {
+const UserModeSelectButton = (props: UserModeSelectButtonProps):JSX.Element => {
     const { backgroundColor = "green.600", icon, buttonTitle, selected = false, ...otherProps } = props;
     const { onClick } = otherProps;
 

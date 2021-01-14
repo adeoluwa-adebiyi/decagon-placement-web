@@ -1,4 +1,3 @@
-import { userInfo } from "os";
 import { useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom"
 import { AppStoreState } from "../../store/store";
@@ -11,7 +10,7 @@ export interface UserViewScreenParams{
     index:string
 }
 
-export const UserViewScreen = () =>{
+export const UserViewScreen = (): JSX.Element =>{
     const {index} = useParams<UserViewScreenParams>();
     const userInfoList = useSelector((state:AppStoreState)=>state.users.userList);
     if(!(index) || parseInt(index) >= userInfoList.length){

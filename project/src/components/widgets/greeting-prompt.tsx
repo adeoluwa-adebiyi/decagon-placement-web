@@ -1,11 +1,11 @@
-import { Box, Heading, HStack, Stack, Text, VStack } from "@chakra-ui/react";
+import { Box, Heading, HStack, Text, VStack } from "@chakra-ui/react";
 import { GREETING_PROMPT } from "../../config/nav-section";
 
 export interface GreetingPromptProps {
     username: string;
 }
 
-const GreetingPrompt = (props: GreetingPromptProps) => {
+const GreetingPrompt = (props: GreetingPromptProps): JSX.Element => {
     return (
         <Box backgroundColor="red">
             <VStack spacing={1} alignItems="start">

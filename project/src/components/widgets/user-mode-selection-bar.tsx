@@ -3,11 +3,11 @@ import { SHOW_USERS_LEAD_TEXT } from "../../config/nav-section";
 import UserModeSelectButton from "./user-model-select-button";
 import {FaMale, FaFemale, FaUsers} from "react-icons/fa"
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserInfoList, FetchUserListPayloadType } from "../../store/actions/user-actions";
+import { fetchUserInfoList } from "../../store/actions/user-actions";
 import { AppStoreState } from "../../store/store";
 
 
-const UserModeSelectBar = () => {
+const UserModeSelectBar = ():JSX.Element => {
 
     const dispatch = useDispatch();
 

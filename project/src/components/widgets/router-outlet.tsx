@@ -1,11 +1,10 @@
 import { VStack } from "@chakra-ui/react";
 import { Route } from "react-router-dom";
-import { PageRoute, PAGE_ROUTES } from "../../config/routes";
 import { Switch, Redirect } from "react-router-dom";
 import { UserListScreen } from "../pages/user-list-screen";
 import { UserViewScreen } from "../pages/user-view-screen";
 
-export const RouterOutlet = () => {
+export const RouterOutlet = (): JSX.Element => {
     return (
         <VStack id="app-router" flex={1}>
             <Switch>

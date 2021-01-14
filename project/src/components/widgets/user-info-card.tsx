@@ -11,7 +11,7 @@ export interface UserInfoCardProps {
 }
 
 //shadow bde8e8
-export const UserInfoCard = (props: UserInfoCardProps) => {
+export const UserInfoCard = (props: UserInfoCardProps):JSX.Element => {
 
     const { info, countryVisible, index } = props;
     const { pictureURL, firstname, lastname, address, email,phone, nat } = info;

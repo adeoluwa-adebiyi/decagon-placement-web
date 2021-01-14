@@ -1,9 +1,7 @@
 import { Box } from "@chakra-ui/react";
 
-export interface UserSelectOptionProps {
-}
 
-const UserSelectOption = (props: UserSelectOptionProps) => {
+const UserSelectOption = ():JSX.Element => {
     return (<Box>
             
         </Box>);

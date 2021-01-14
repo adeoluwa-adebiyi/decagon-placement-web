@@ -6,7 +6,7 @@ export interface CountryVisibleSwitchProps {
     setCountryVisible: (data: boolean) => void;
 }
 
-export const CountryVisibleSwitch = (props: CountryVisibleSwitchProps) => {
+export const CountryVisibleSwitch = (props: CountryVisibleSwitchProps):JSX.Element => {
     const { countryVisible, setCountryVisible } = props;
     return (
         <Box display="flex" flexDirection="row" flex={2}>

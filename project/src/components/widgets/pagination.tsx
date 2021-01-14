@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchUserInfoList } from "../../store/actions/user-actions";
 import { AppStoreState } from "../../store/store";
 
-export const Pagination = () =>{
+export const Pagination = (): JSX.Element =>{
 
     const currentPage = useSelector((state:AppStoreState)=>state.users.page);
 

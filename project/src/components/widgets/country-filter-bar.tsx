@@ -8,7 +8,7 @@ export interface CountryFilterBarProps{
     currentCountry: string;
 }
 
-export const CountryFilterBar = (props: CountryFilterBarProps)=>{
+export const CountryFilterBar = (props: CountryFilterBarProps): JSX.Element=>{
     const { countryKeyList, setCountryFilter, currentCountry } = props;
 
     return (

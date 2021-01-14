@@ -1,4 +1,4 @@
-import { Input, InputGroup, InputLeftAddon, Text } from "@chakra-ui/react";
+import { Input, InputGroup, InputLeftAddon } from "@chakra-ui/react";
 import { Box } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
 import { setFilterText } from "../../store/actions/user-actions";
@@ -10,7 +10,7 @@ export interface SearchInputFilterProps{
     placeholder:string;
 }
 
-export const SearchInputFilter = (props: SearchInputFilterProps)=>{
+export const SearchInputFilter = (props: SearchInputFilterProps): JSX.Element=>{
 
     const filterTextValue = useSelector((state:AppStoreState)=>state.users.filterText);
     const dispatch = useDispatch();

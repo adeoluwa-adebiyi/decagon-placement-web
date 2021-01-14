@@ -1,6 +1,5 @@
 import { Box, Input, InputGroup, InputLeftAddon } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { USER_SEARCH_PLACEHOLDER } from "../../config/nav-section";
 import { setFilterText } from "../../store/actions/user-actions";
 import { AppStoreState } from "../../store/store";
 import { SearchIcon } from "./search-icon";
@@ -9,7 +8,7 @@ export interface UserSearchNarProps {
     placeholder: string;
 }
 
-const UserSearchBar = (props: UserSearchNarProps) => {
+const UserSearchBar = (props: UserSearchNarProps):JSX.Element => {
     const { placeholder } = props;
     const filterTextValue = useSelector((state:AppStoreState)=>state.users.filterText);
     const dispatch = useDispatch();

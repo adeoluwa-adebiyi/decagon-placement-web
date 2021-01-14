@@ -7,7 +7,7 @@ import { PAGE_ROUTES } from "../../config/routes";
 import { MALE_USERS_TITLE, FEMALE_USERS_TITLE, ALL_USERS_TITLE } from "../../config/page-titles";
 
 
-export const RouteTitleSection = ()=>{
+export const RouteTitleSection = (): JSX.Element=>{
     
     const history = useHistory();
     const gender:string|undefined = useSelector((state:AppStoreState)=>state.users.gender); 
