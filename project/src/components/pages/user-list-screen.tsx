@@ -1,5 +1,5 @@
 import { Box, VStack } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { filterUsersByText } from "../../domain/filters/user-info-filter";
 import { UserInfoModel } from "../../domain/models/user-info";
