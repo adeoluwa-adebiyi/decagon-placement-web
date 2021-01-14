@@ -12,7 +12,7 @@ function* fetchUserList(action: FetchUserListAction){
     const {page, gender} = action.payload;
     const fetchInfo = (data:UserInfoFetchApiParams) => RemoteUserInfoRepo.getInstance().fetch(data);
     const response: UserInfoModel[] = yield call(fetchInfo,{page, gender});
-    yield put(setUserInfoList(response));
+    yield put(setUserInfoList(response, gender));
     yield put(setUserInfoListFetched(page,true));
     }catch(e){
         const prevPage = yield select((state:AppStoreState)=>state.users.page);
