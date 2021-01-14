@@ -1,31 +1,40 @@
 # Decagon Dev-Placement-Web
 
-## Resources
-- Design: XD
-- API: Random User Generator | Home
-- UX: Video
+![Test Passing Status](https://github.com/adeoluwa-adebiyi/decagon-devplacement-web/workflows/develop/badge.svg)
 
-## Instructions
-- Use any Client Side framework of your choice.
-- Write tests
-- Deploy on a static hosting site.
-- Make all the features shown in the video work.
 
-## Submission
-- Create a private GitHub repo with your work and add @bondz, @dreplica, and @markeu as a collaborator.
-- In your readme
-- Put a link to the deployed site
-- Add a badge to your CI with tests passing
-- Describe the technologies you used in the project
-- Any other information about the project you wish to include
+## Decsription
 
-## Evaluation
-- Features shown in the video work
-- Commit in chunks - git history should show progress
-- Subtle microinteractions included the ui - make it delightful
-- Implement local search (the api does not support it)
-- The UI to show countries is at your discretion.
-- Pagination should work and be deterministic
-- Download the current page to CSV (noinfo)
-- Code is clear and easy to extend.
-- Write tests for the features you implement
+### Task: Build the dashboard with the design below
+
+
+### Tools Used
+- React
+- Redux
+- React-Redux
+- Redux Saga
+- Jest
+- Axios Mock Aadapter
+
+#### Overview
+
+The App is developed using the React View library integrated with the Redux Store using React-Redux provider to provide store context.
+The app follows the clean-code patter with the development originating from the entities (models) upwards.
+There are key parts of the app namely;
+
+- The Models (Domain Layer)
+- The Entities
+- The Store
+- The Repositories
+- The Apis
+- The Action Interceptors
+- The Task Runners (Saga Generators)
+
+A brief overview of flow of data in the app:
+
+    Api -> Repo -> Enities -> Store -> Models -> View Layer
+
+    and
+
+    View-Layer -> Action Interceptors -> Generator Task Runners -> Repo -> Entities -> Store
+
