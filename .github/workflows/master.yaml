@@ -1,0 +1,59 @@
+on:
+  pull_request:
+    branches: ["master"]
+
+  push:
+    branches: ["master"]
+
+name: Test, Build & Deploy
+jobs:
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install NodeJS
+        run: sudo apt install -y nodejs npm
+
+      - name: Install dependencies
+        run: |
+          cd project
+          npm install
+
+      - name: Run tests
+        run : cd project && npm run test
+
+  deploy:
+    needs: ["test"]
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Install NodeJS
+        run: sudo apt install -y nodejs npm
+
+      - name: Install dependencies
+        run: |
+          cd project
+          npm install
+
+      - name: Build
+        run: |
+          cd project
+          npm run build
+
+      - name: Deploy to Netlify
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: './project/build'
+          production-branch: develop
+          deploy-message: "Deploy from GitHub Actions"
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.LIVE_NETLIFY_SITE_ID }}
+        timeout-minutes: 1
