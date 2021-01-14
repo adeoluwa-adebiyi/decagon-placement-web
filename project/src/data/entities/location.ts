@@ -1,8 +1,13 @@
 import { Coordinates } from "./coordinates";
 import { Timezone } from "./timezone";
 
+export interface StreetObject{
+    number: number;name: string
+}
+
+
 export interface Location {
-    street:      string | { number: number, name: string};
+    street:      StreetObject;
     city:        string;
     state:       string;
     postcode:    number | string;

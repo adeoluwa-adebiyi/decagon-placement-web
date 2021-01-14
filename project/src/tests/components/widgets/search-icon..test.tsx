@@ -4,7 +4,7 @@ import { SearchIcon } from "../../../components/widgets/search-icon";
 import { Search2Icon } from "@chakra-ui/icons";
 import { USER_SEARCH_PLACEHOLDER } from "../../../config/nav-section";
 
-describe("Tests UserSearchBar component for functionality", ()=>{
+describe("Tests SearchIcon widget component for functionality", ()=>{
 
     it("Should render appropriate Search icon", ()=>{
         const wrapper = shallow(

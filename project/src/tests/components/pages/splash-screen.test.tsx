@@ -1,15 +1,15 @@
 import { mount } from "enzyme";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux"
-import DashboardScreen from "../../components/pages/dashboard-screen";
-import {SetUserListFetchedAction, UserReducerActionType} from "../../store/actions/user-actions";
-import SplashScreen from "../../components/pages/splash-screen";
-import store from "../../store/store"
-import Loader from "../../components/widgets/loader";
+import DashboardScreen from "../../../components/pages/dashboard-screen";
+import {SetUserListFetchedAction, UserReducerActionType} from "../../../store/actions/user-actions";
+import SplashScreen from "../../../components/pages/splash-screen";
+import store from "../../../store/store"
+import Loader from "../../../components/widgets/loader";
 import MockAdapter from "axios-mock-adapter";
-import { BASE_URL } from "../../config/config";
-import HttpClient from "../../config/http-client";
-import { USER_INFO_FETCH_FIXTURE_DEFAULT, USER_INFO_FETCH_FIXTURE_MALE, USER_INFO_FETCH_FIXTURE_FEMALE } from "../../data/fixtures/user-info-fetch-fixture";
+import { BASE_URL } from "../../../config/config";
+import HttpClient from "../../../config/http-client";
+import { USER_INFO_FETCH_FIXTURE_DEFAULT, USER_INFO_FETCH_FIXTURE_MALE, USER_INFO_FETCH_FIXTURE_FEMALE } from "../../../data/fixtures/user-info-fetch-fixture";
 
 describe("Test functionality of SplashScreen component", ()=>{
 

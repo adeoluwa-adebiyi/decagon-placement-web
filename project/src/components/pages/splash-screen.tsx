@@ -5,6 +5,7 @@ import { fetchUserInfoList } from "../../store/actions/user-actions";
 import { withRouter} from "react-router-dom";
 import DashboardScreen from "./dashboard-screen";
 import Loader from "../widgets/loader";
+import { VStack } from "@chakra-ui/react";
 
 const SplashScreen = ():JSX.Element=>{
 
@@ -25,10 +26,10 @@ const SplashScreen = ():JSX.Element=>{
     },[users]);
 
     return (
-        <React.Fragment>
+        <VStack height="100vh" maxHeight="100vh">
             {!dashboardVisible && <Loader/>}
             {dashboardVisible && <DashboardScreen/>}
-        </React.Fragment>
+        </VStack>
 
     )
 }
