@@ -3,9 +3,15 @@
 [![Actions Status](https://github.com/adeoluwa-adebiyi/decagon-placement-web/workflows/Test,%20Build%20&%20Deploy/badge.svg)](https://github.com/adeoluwa-adebiyi/decagon-placement-web/actions)
 
 
-## Decsription
+## Description
 
 ### Task: Build the dashboard with the design below
+
+### Links:
+
+- Live: https://6000bbedc9b17160738abe83--live-decagon-nexus.netlify.app
+
+- Staging: https://decagon-nexus.netlify.app
 
 
 ### Tools Used
