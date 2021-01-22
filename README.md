@@ -7,6 +7,11 @@
 
 ### Task: Build the dashboard with the design below
 
+### Contact
+
+- Name: Adeoluwa Adebiyi
+- Email: adeoluwaadebiyi@gmail.com
+
 ### Links:
 
 - Live: https://6000bbedc9b17160738abe83--live-decagon-nexus.netlify.app
